@@ -1,13 +1,11 @@
 package ru.max.springcourse.controllers;
 
-import jdk.internal.classfile.components.ClassPrinter;
+
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -15,7 +13,12 @@ import java.util.List;
 public class FirstController {
 
     @GetMapping("/hello")
-    public String helloPage() {
+    public String helloPage(@RequestParam(value = "name", required = false) String name,
+                            @RequestParam(value = "surname", required = false) String surname) {
+
+        System.out.println("Hello, " + name + " " + surname);
+
+
         return "first/hello";
     }
 
