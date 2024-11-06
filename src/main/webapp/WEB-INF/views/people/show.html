@@ -2,11 +2,32 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Человек</title>
+    <title>Person</title>
 </head>
 <body>
+Current user:
+<p th:text="${person.getName() + ', ' + person.getAge()}">VALUE</p>
+<p th:text="${'Email: ' + person.getEmail()}">VALUE</p>
+<p th:text="${'ID: ' + person.getId()}">VALUE</p>
 
-<p th:text="${person.getName()}">VALUE</p>
-<p th:text="${person.getId()}">VALUE</p>
+
+If you want to edit this user:
+<br/>
+<a th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit</a>
+
+<br/>
+<br/>
+<br/>
+
+Delete this user:
+<form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
+    <input type="submit" value="Delete">
+</form>
+
+<br/>
+<br/>
+On the main page:
+<br/>
+<a th:href="@{/people}">Return</a>
 </body>
 </html>
