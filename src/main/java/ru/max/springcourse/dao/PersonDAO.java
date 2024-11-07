@@ -3,12 +3,10 @@ package ru.max.springcourse.dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 import ru.max.springcourse.models.Person;
 
-import java.sql.*;
-import java.util.ArrayList;
+
 import java.util.List;
 
 
